@@ -1,0 +1,122 @@
+﻿=================================================
+    ANALISIS DEL SISTEMA - WINDOWS
+=================================================
+Fecha y hora de ejecucion: 2026-10-09 18:34:19
+Nombre del equipo: FABBYGUARNIZO
+Usuario actual: FaBBy
+
+---------- 1. PROCESADOR (CPU) ----------
+
+
+Name                      : AMD Ryzen 7 4700U with Radeon Graphics         
+Manufacturer              : AuthenticAMD
+NumberOfCores             : 8
+NumberOfLogicalProcessors : 8
+MaxClockSpeed             : 2000
+
+
+
+
+
+---------- 2. MEMORIA RAM ----------
+
+BankLabel    Manufacturer Capacidad_GB Speed
+---------    ------------ ------------ -----
+P0 CHANNEL A Hynix                   8  3200
+P0 CHANNEL B Hynix                   8  3200
+
+
+Total instalado: 16 GB
+
+
+---------- 3. ALMACENAMIENTO - DISCOS FISICOS ----------
+
+FriendlyName         MediaType BusType HealthStatus Tamano_GB
+------------         --------- ------- ------------ ---------
+INTEL SSDPEKNW512G8H SSD       NVMe    Healthy         476,94
+
+
+
+
+---------- 3.1 ALMACENAMIENTO - VOLUMENES ----------
+
+DriveLetter FileSystemLabel FileSystem HealthStatus Tamano_GB Libre_GB
+----------- --------------- ---------- ------------ --------- --------
+          C                 NTFS       Healthy         475,89   252,31
+                            NTFS       Healthy           0,93     0,11
+
+
+
+
+---------- 4. CONEXIONES DE RED ACTIVAS ----------
+
+Name                               InterfaceDescription                    MacAddress        LinkSpeed
+----                               --------------------                    ----------        ---------
+vEthernet (WSL (Hyper-V firewall)) Hyper-V Virtual Ethernet Adapter        00-15-5D-46-1A-E6 10 Gbps  
+Wi-Fi                              Realtek RTL8821CE 802.11ac PCIe Adapter 80-D2-1D-D5-6B-17 150 Mbps 
+
+
+
+InterfaceAlias                     IPAddress     
+--------------                     ---------     
+vEthernet (WSL (Hyper-V firewall)) 172.20.240.1  
+Wi-Fi                              192.168.100.11
+Loopback Pseudo-Interface 1        127.0.0.1     
+
+
+
+
+---------- 5. TOP 10 PROCESOS QUE MAS CONSUMEN CPU ----------
+
+Name              Id CPU_seg RAM_MB
+----              -- ------- ------
+Spotify        18944   959,8  266,3
+Spotify         2772  417,34    296
+Code           21060  209,78  416,1
+chrome          5792  204,09  408,4
+msedgewebview2 15784   87,56  109,3
+Spotify        19192   86,89     61
+Code           16548    84,3  199,3
+chrome          4932   75,59  238,4
+chrome          3136   68,34  143,4
+msedgewebview2  5048   63,17  392,1
+
+
+
+
+---------- 6. SERVICIOS EN EJECUCION (15 primeros) ----------
+
+Name                        DisplayName                                                  
+----                        -----------                                                  
+AdobeARMservice             Adobe Acrobat Update Service                                 
+AMD Crash Defender Service  AMD Crash Defender Service                                   
+AMD External Events Utility AMD External Events Utility                                  
+AnyDesk                     AnyDesk Service                                              
+Appinfo                     Información de la aplicación                                 
+AudioEndpointBuilder        Compilador de extremo de audio de Windows                    
+Audiosrv                    Audio de Windows                                             
+BDESVC                      Servicio Cifrado de unidad BitLocker                         
+BFE                         Motor de filtrado de base                                    
+BITS                        Servicio de transferencia inteligente en segundo plano (BITS)
+BluetoothUserService_125b59 Servicio de soporte técnico de usuario de Bluetooth_125b59   
+BrokerInfrastructure        Servicio de infraestructura de tareas en segundo plano       
+BTAGService                 Servicio de puerta de enlace de audio de Bluetooth           
+BthAvctpSvc                 Servicio AVCTP                                               
+bthserv                     Servicio de compatibilidad con Bluetooth                     
+
+
+
+
+---------- 7. RESUMEN DEL SISTEMA OPERATIVO ----------
+
+
+Sistema_Operativo : Microsoft Windows 11 Home Single Language
+Version           : 10.0.26200
+Arquitectura      : 64 bits
+Fabricante        : HP
+Modelo            : HP Pavilion Laptop 15-eh0xxx
+Ultimo_Arranque   : 9/10/2026 17:46:21
+
+
+
+
