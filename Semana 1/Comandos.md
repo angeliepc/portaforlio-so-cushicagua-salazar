@@ -26,16 +26,12 @@
 | 6 | `git remote add origin https://github.com/paulettepc/portafolio-so-cushicagua-salazar.git` | Une tu carpeta con tu repositorio en GitHub. `origin` es el apodo de esa dirección. |
 | 7 | `git push -u origin main` | Envía tu proyecto a GitHub, a la rama `main`. El `-u` recuerda la conexión para la próxima vez. |
 
-> ⚠️ En el paso 6, verifica que tu usuario y el nombre del repositorio coincidan con los de tu GitHub.
-
 ---
 
-## 🔁 Para cambios futuros
+## Para cambios futuros
 
 | Comando | ¿Qué hace? |
 |---------|------------|
 | `git add .` | Prepara todos los archivos modificados. |
 | `git commit -m "mensaje"` | Guarda los cambios con una descripción. |
 | `git push` | Envía los cambios a GitHub. |
-
-✨ Abre el archivo en VS Code y presiona `Ctrl + Shift + V` para ver la vista previa.
