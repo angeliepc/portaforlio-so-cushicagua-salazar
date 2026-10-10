@@ -9,7 +9,8 @@ Portafolio de la asignatura de Sistemas Operativos. Cada semana tiene su propia 
 ```text
 portafolio-so-cushicagua-salazar/
 └── Semana 1/
-    ├── Comandos.md            # Ayuda memoria de comandos Windows / Linux
+    ├── Comandos.md            # Memoria de comandos Windows / Linux
+    ├── Guia_git.md            # Guía de comandos Git y GitHub
     ├── analisis_windows.ps1   # Script de Windows (PowerShell)
     ├── analisis_linux.sh      # Script de Linux (Bash)
     ├── estado_windows.txt     # Captura de la salida del script de Windows

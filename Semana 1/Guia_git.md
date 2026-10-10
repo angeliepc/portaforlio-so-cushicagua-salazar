@@ -1,8 +1,8 @@
 # Guía de comandos Git y GitHub
 
-> **Cómo leer esta guía:** el texto normal explica; los bloques grises (``` ```) son **comandos** listos para copiar y pegar (`Ctrl + ñ` o menú **Terminal → Nueva terminal**).
+> **Cómo leer esta guía:** el texto normal explica; los bloques grises son **comandos** listos para copiar y pegar. Se escriben en la terminal de VS Code (`Ctrl + ñ`, o menú **Terminal → Nueva terminal**).
 
-## Pasos 
+## Pasos para subir un proyecto por primera vez
 
 1. Crear el archivo **README.md** con el título del proyecto.
 2. Iniciar **Git** en la carpeta.
@@ -28,10 +28,36 @@
 
 ---
 
+## Configurar tu identidad (solo la primera vez)
+
+Si al hacer un `commit` aparece el error `Author identity unknown`, Git todavía no sabe quién eres. Configúralo con el nombre y el correo de tu cuenta de GitHub:
+
+```bash
+git config user.name "Tu Nombre"
+git config user.email "tu-correo@ejemplo.com"
+```
+
+Sin `--global` se aplica solo a este repositorio. Con `--global` se aplica a todos los repositorios del equipo.
+
+---
+
 ## Para cambios futuros
+
+Cada vez que modifiques archivos, guárdalos en VS Code (`Ctrl + S`) y repite estos tres comandos:
 
 | Comando | ¿Qué hace? |
 |---------|------------|
 | `git add .` | Prepara todos los archivos modificados. |
 | `git commit -m "mensaje"` | Guarda los cambios con una descripción. |
 | `git push` | Envía los cambios a GitHub. |
+
+---
+
+## Comandos útiles para revisar
+
+| Comando | ¿Qué hace? |
+|---------|------------|
+| `git status` | Muestra qué archivos cambiaron y cuáles están listos para el commit. |
+| `git log --oneline` | Muestra el historial de commits, uno por línea. |
+| `git pull` | Descarga los cambios que haya en GitHub y los une con tu carpeta. |
+| `git diff` | Muestra las diferencias de los archivos que aún no preparaste con `add`. |
