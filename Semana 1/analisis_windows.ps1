@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Analisis del sistema Windows: genera estado_windows.log y lo sube a GitHub.
+    Analisis del sistema Windows: genera estado_windows.txt y lo sube a GitHub.
 .DESCRIPTION
     Recopila CPU, memoria, almacenamiento, red, procesos, servicios y datos del
     sistema operativo. Funciona con Windows en cualquier idioma.
@@ -19,7 +19,7 @@ param(
 $ErrorActionPreference = 'Continue'
 
 # El log se guarda junto al script, sin importar desde donde se ejecute
-$archivoLog = Join-Path $PSScriptRoot 'estado_windows.log'
+$archivoLog = Join-Path $PSScriptRoot 'estado_windows.txt'
 
 # Escribe una seccion en el log (codificacion UTF-8)
 function Add-Seccion {
@@ -139,7 +139,7 @@ try {
     }
 
     Write-Host 'Iniciando subida automatica a GitHub...'
-    git add estado_windows.log analisis_windows.ps1
+    git add estado_windows.txt analisis_windows.ps1
 
     git diff --cached --quiet
     if ($LASTEXITCODE -eq 0) {

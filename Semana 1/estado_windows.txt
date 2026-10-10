@@ -1,7 +1,7 @@
 ﻿=================================================
     ANALISIS DEL SISTEMA - WINDOWS
 =================================================
-Fecha y hora de ejecucion: 2026-10-09 18:34:19
+Fecha y hora de ejecucion: 2026-10-09 19:15:17
 Nombre del equipo: FABBYGUARNIZO
 Usuario actual: FaBBy
 
@@ -42,7 +42,7 @@ INTEL SSDPEKNW512G8H SSD       NVMe    Healthy         476,94
 
 DriveLetter FileSystemLabel FileSystem HealthStatus Tamano_GB Libre_GB
 ----------- --------------- ---------- ------------ --------- --------
-          C                 NTFS       Healthy         475,89   252,31
+          C                 NTFS       Healthy         475,89   252,36
                             NTFS       Healthy           0,93     0,11
 
 
@@ -53,7 +53,7 @@ DriveLetter FileSystemLabel FileSystem HealthStatus Tamano_GB Libre_GB
 Name                               InterfaceDescription                    MacAddress        LinkSpeed
 ----                               --------------------                    ----------        ---------
 vEthernet (WSL (Hyper-V firewall)) Hyper-V Virtual Ethernet Adapter        00-15-5D-46-1A-E6 10 Gbps  
-Wi-Fi                              Realtek RTL8821CE 802.11ac PCIe Adapter 80-D2-1D-D5-6B-17 150 Mbps 
+Wi-Fi                              Realtek RTL8821CE 802.11ac PCIe Adapter 80-D2-1D-D5-6B-17 120 Mbps 
 
 
 
@@ -70,16 +70,16 @@ Loopback Pseudo-Interface 1        127.0.0.1
 
 Name              Id CPU_seg RAM_MB
 ----              -- ------- ------
-Spotify        18944   959,8  266,3
-Spotify         2772  417,34    296
-Code           21060  209,78  416,1
-chrome          5792  204,09  408,4
-msedgewebview2 15784   87,56  109,3
-Spotify        19192   86,89     61
-Code           16548    84,3  199,3
-chrome          4932   75,59  238,4
-chrome          3136   68,34  143,4
-msedgewebview2  5048   63,17  392,1
+Spotify        18944 1532,59  262,5
+Spotify         2772  644,72  270,6
+Code           21060  325,25  334,4
+chrome          5792  269,45  374,5
+Spotify        19192  142,61   55,2
+chrome          4932   140,3    250
+msedgewebview2 15784  120,73  109,3
+Code           16548  119,53  184,1
+chrome          3136  111,66  170,5
+msedgewebview2 20180   84,45  160,3
 
 
 
@@ -93,6 +93,7 @@ AMD Crash Defender Service  AMD Crash Defender Service
 AMD External Events Utility AMD External Events Utility                                  
 AnyDesk                     AnyDesk Service                                              
 Appinfo                     Información de la aplicación                                 
+AppXSvc                     Servicio de implementación de AppX (AppXSVC)                 
 AudioEndpointBuilder        Compilador de extremo de audio de Windows                    
 Audiosrv                    Audio de Windows                                             
 BDESVC                      Servicio Cifrado de unidad BitLocker                         
@@ -102,7 +103,6 @@ BluetoothUserService_125b59 Servicio de soporte técnico de usuario de Bluetooth
 BrokerInfrastructure        Servicio de infraestructura de tareas en segundo plano       
 BTAGService                 Servicio de puerta de enlace de audio de Bluetooth           
 BthAvctpSvc                 Servicio AVCTP                                               
-bthserv                     Servicio de compatibilidad con Bluetooth                     
 
 
 
@@ -115,7 +115,7 @@ Version           : 10.0.26200
 Arquitectura      : 64 bits
 Fabricante        : HP
 Modelo            : HP Pavilion Laptop 15-eh0xxx
-Ultimo_Arranque   : 9/10/2026 17:46:21
+Ultimo_Arranque   : 9/10/2026 17:46:22
 
 
 

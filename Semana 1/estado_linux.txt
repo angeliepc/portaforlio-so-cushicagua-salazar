@@ -1,0 +1,183 @@
+=================================================
+    ANALISIS DEL SISTEMA - LINUX
+=================================================
+Fecha y hora de ejecucion: 2026-10-09 19:39:03
+Nombre del equipo: FabbyGuarnizo
+Usuario actual: root
+
+---------- 1. PROCESADOR (CPU) ----------
+$ lscpu
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           48 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  8
+On-line CPU(s) list:                     0-7
+Vendor ID:                               AuthenticAMD
+Model name:                              AMD Ryzen 7 4700U with Radeon Graphics
+CPU family:                              23
+Model:                                   96
+Thread(s) per core:                      1
+Core(s) per socket:                      8
+Socket(s):                               1
+Stepping:                                1
+BogoMIPS:                                3992.54
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core ssbd ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload umip rdpid
+Virtualization:                          AMD-V
+Hypervisor vendor:                       Microsoft
+Virtualization type:                     full
+L1d cache:                               256 KiB (8 instances)
+L1i cache:                               256 KiB (8 instances)
+L2 cache:                                4 MiB (8 instances)
+L3 cache:                                4 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-7
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Mitigation; untrained return thunk; SMT disabled
+Vulnerability Spec rstack overflow:      Mitigation; SMT disabled
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Retpolines; IBPB conditional; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+
+$ cat /proc/cpuinfo (resumen)
+model name	: AMD Ryzen 7 4700U with Radeon Graphics
+Nucleos logicos: 8
+
+
+---------- 2. MEMORIA ----------
+$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           7.4Gi       639Mi       6.4Gi       4.1Mi       614Mi       6.8Gi
+Swap:          2.0Gi          0B       2.0Gi
+
+$ cat /proc/meminfo (primeras 10 lineas)
+MemTotal:        7805308 kB
+MemFree:         6676332 kB
+MemAvailable:    7150376 kB
+Buffers:           16496 kB
+Cached:           588752 kB
+SwapCached:            0 kB
+Active:           208160 kB
+Inactive:         543584 kB
+Active(anon):       3220 kB
+Inactive(anon):   147384 kB
+
+
+---------- 3. ALMACENAMIENTO ----------
+$ lsblk
+NAME MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda    8:0    0 722.9M  1 disk 
+sdb    8:16   0  96.5M  1 disk 
+sdc    8:32   0     2G  0 disk [SWAP]
+sdd    8:48   0     1T  0 disk /mnt/wslg/distro
+                               /
+
+$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+none            3.8G     0  3.8G   0% /usr/lib/modules/6.18.40.1-microsoft-standard-WSL2
+none            3.8G  4.0K  3.8G   1% /mnt/wsl
+drivers         476G  224G  253G  47% /usr/lib/wsl/drivers
+/dev/sdd       1007G  1.7G  954G   1% /
+none            3.8G   64K  3.8G   1% /mnt/wslg
+none            3.8G     0  3.8G   0% /usr/lib/wsl/lib
+rootfs          3.8G  3.3M  3.8G   1% /init
+none            3.8G  508K  3.8G   1% /run
+none            3.8G     0  3.8G   0% /run/lock
+none            3.8G     0  3.8G   0% /run/shm
+none            3.8G   80K  3.8G   1% /mnt/wslg/versions.txt
+none            3.8G   80K  3.8G   1% /mnt/wslg/doc
+C:\             476G  224G  253G  47% /mnt/c
+tmpfs           3.8G     0  3.8G   0% /tmp
+none            1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+none            1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+none            1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs           763M   12K  763M   1% /run/user/1000
+
+
+---------- 4. BUSES Y E/S ----------
+$ lspci
+0a71:00:00.0 System peripheral: Red Hat, Inc. Virtio 1.0 file system (rev 01)
+5582:00:00.0 SCSI storage controller: Red Hat, Inc. Virtio 1.0 console (rev 01)
+ccb1:00:00.0 3D controller: Microsoft Corporation Basic Render Driver
+
+$ lsusb
+
+
+---------- 5. CONEXIONES DE RED ACTIVAS ----------
+$ ip -brief address
+lo               UNKNOWN        127.0.0.1/8 10.255.255.254/32 ::1/128 
+eth0             UP             172.20.254.52/20 fe80::215:5dff:fe57:176d/64 
+
+
+---------- 6. TOP 10 PROCESOS QUE MAS CONSUMEN CPU ----------
+$ ps -eo pid,comm,%cpu,%mem --sort=-%cpu | head -n 11
+    PID COMMAND         %CPU %MEM
+   2919 bash             6.6  0.0
+   2719 packagekitd      0.4  0.2
+    119 systemd-udevd    0.0  0.1
+      1 systemd          0.0  0.1
+     69 systemd-journal  0.0  0.2
+    164 networkd-dispat  0.0  0.3
+    887 polkitd          0.0  0.1
+   1996 bash             0.0  0.0
+    282 unattended-upgr  0.0  0.4
+    599 systemd          0.0  0.1
+
+
+---------- 7. SERVICIOS EN EJECUCION (15 primeros) ----------
+$ systemctl list-units --type=service --state=running
+  chrony.service              loaded active running chrony, an NTP client/server
+  cron.service                loaded active running Regular background program processing daemon
+  dbus.service                loaded active running D-Bus System Message Bus
+  getty@tty1.service          loaded active running Getty on tty1
+  networkd-dispatcher.service loaded active running Dispatcher daemon for systemd-networkd
+  packagekit.service          loaded active running PackageKit Daemon
+  polkit.service              loaded active running Authorization Manager
+  rsyslog.service             loaded active running System Logging Service
+  systemd-journald.service    loaded active running Journal Service
+  systemd-logind.service      loaded active running User Login Management
+  systemd-resolved.service    loaded active running Network Name Resolution
+  systemd-udevd.service       loaded active running Rule-based Manager for Device Events and Files
+  unattended-upgrades.service loaded active running Unattended Upgrades Shutdown
+  user@1000.service           loaded active running User Manager for UID 1000
+
+
+---------- 8. RESUMEN DEL SISTEMA OPERATIVO ----------
+$ cat /etc/os-release
+PRETTY_NAME="Ubuntu 26.04.1 LTS"
+VERSION="26.04.1 LTS (Resolute Raccoon)"
+$ uname -a
+Linux FabbyGuarnizo 6.18.40.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Fri Jul 31 22:12:15 UTC 2026 x86_64 GNU/Linux
+
+$ sudo lshw -short
+H/W path    Device    Class      Description
+============================================
+                      system     Computer
+/0                    bus        Motherboard
+/0/1                  memory     7936MiB System memory
+/0/2                  processor  AMD Ryzen 7 4700U with Radeon Graphics
+/0/3                  generic    Virtio 1.0 file system
+/0/3/0                generic    Virtual I/O device
+/0/4                  storage    Virtio 1.0 console
+/0/4/0                generic    Virtual I/O device
+/0/0                  display    Basic Render Driver
+/0/5                  system     PnP device PNP0b00
+/0/6        scsi0     storage    
+/0/6/0.0.0  /dev/sda  volume     722MiB Virtual Disk
+/0/6/0.0.1  /dev/sdb  volume     96MiB Virtual Disk
+/0/6/0.0.2  /dev/sdc  volume     2GiB Virtual Disk
+/0/6/0.0.3  /dev/sdd  volume     1TiB Virtual Disk
+/1          eth0      network    Ethernet interface
