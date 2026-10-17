@@ -1,0 +1,56 @@
+=== 1. Archivos y representación hexadecimal ===
+
+           Path: ...\t.txt
+
+           00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+
+00000000   EF BB BF 41 C3 B1 6F 0A                           ...A..o.
+
+=== 2. Memoria caché y CPU ===
+
+... (información de la memoria caché, según el equipo)
+
+8
+
+=== 3. Memoria RAM y procesos ===
+
+245
+
+Handles  NPM(K)    PM(M)      WS(M)     CPU(s)   Id  ProcessName
+-------  ------    -----      -----     ------   --  -----------
+...      ...       ...        ...       ...      4   System
+
+TotalVisibleMemorySize FreePhysicalMemory
+---------------------- ------------------
+              16384000           7340000
+
+=== 4. Servicios del sistema ===
+
+85
+
+Status   Name               DisplayName
+------   ----               -----------
+Running  ...                ...
+Running  ...                ...
+... (hasta ocho servicios, según el equipo)
+
+=== 5. Discos y almacenamiento ===
+
+DeviceID        Size        FreeSpace
+--------        ----        ---------
+C:              ...         ...
+D:              ...         ...
+
+=== 6. Información del sistema ===
+
+Caption                 Version      LastBootUpTime
+-------                 -------      --------------
+Microsoft Windows 11    10.0....     ...
+
+=== 7. Uso de CPU ===
+
+PercentIdleTime
+---------------
+... 
+
+=== Fin del diagnóstico Windows ===

@@ -1,0 +1,66 @@
+=== 1. Archivos y representación hexadecimal ===
+00000000: 41c3 b16f 0a                             A..o.
+No existe n.bin; se omite xxd n.bin.
+
+=== 2. Memoria caché y CPU ===
+NAME ONE-SIZE ALL-SIZE WAYS TYPE        LEVEL
+L1d       32K      32K    8 Data            1
+L1i       32K      32K    8 Instruction     1
+L2       256K     256K    4 Unified         2
+L3         8M       8M   16 Unified         3
+64
+8
+model name : Example CPU Model
+
+=== 3. Memoria RAM y procesos ===
+               total        used        free      shared  buff/cache   available
+Mem:             16Gi        5Gi        7Gi        1Gi        4Gi        10Gi
+Swap:             2Gi        0Gi        2Gi
+
+%Cpu(s):  3.0 us,  1.0 sy,  0.0 ni, 95.0 id, ...
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 ... 
+
+MemTotal:       16384000 kB
+MemFree:         7340000 kB
+MemAvailable:   10400000 kB
+0.00 0.00
+
+=== 4. Inicio y servicios del sistema ===
+Startup finished in 2.1s (kernel) + 5.4s (userspace) = 7.5s
+... (los tiempos y servicios dependen del equipo)
+... (cadena crítica de inicio)
+    PID COMMAND
+      1 systemd
+systemd(1)-+-NetworkManager(700)
+           |-sshd(800)
+           `-...
+... (lista de servicios activos)
+12
+
+=== 5. Discos y almacenamiento ===
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda      8:0    0   500G  0 disk
+├─sda1   8:1    0   499G  0 part /
+└─sda2   8:2    0     1G  0 part [SWAP]
+
+=== 6. Archivos y dispositivos del sistema ===
+... (primeras entradas de /proc)
+crw-rw-rw- 1 root root 1, 3 ... /dev/null
+crw-rw-rw- 1 root root 5, 0 ... /dev/tty
+... (el dispositivo /dev/sda o /dev/vda depende del equipo)
+
+=== 7. Medición del tiempo de ejecución ===
+Escribe tu nombre: Usuario
+Hola, Usuario
+
+real    0m0.0s
+user    0m0.0s
+sys     0m0.0s
+
+real    0m0.1s
+user    0m0.0s
+sys     0m0.1s
+
+=== Fin del diagnóstico Linux ===
