@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Script de diagnóstico básico para Linux
 # Algunos comandos pueden no estar disponibles en todas las distribuciones.
-# Ejecutar con: bash bash.sh
+# Ejecutar con: bash scrip2.sh
 
 set +e
 

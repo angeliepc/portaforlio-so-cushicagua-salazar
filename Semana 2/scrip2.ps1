@@ -1,5 +1,5 @@
 # Script de diagnóstico básico para Windows PowerShell
-# Ejecutar en PowerShell con: .\windows.ps1
+# Ejecutar en PowerShell con: .\scrip2.ps1
 
 Write-Output "=== 1. Archivos y representación hexadecimal ==="
 'Año' | Set-Content -Path t.txt -Encoding UTF8
