@@ -116,7 +116,3 @@ Arquitectura      : 64 bits
 Fabricante        : HP
 Modelo            : HP Pavilion Laptop 15-eh0xxx
 Ultimo_Arranque   : 9/10/2026 17:46:22
-
-
-
-

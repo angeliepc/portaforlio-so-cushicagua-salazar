@@ -1,0 +1,36 @@
+=== Inicio del diagnóstico Windows (semana 3) ===
+
+=== 1. Tiempo de arranque ===
+Último arranque: lunes, 19 de octubre de 2026 8:58:10
+FwPOSTTime: 5570 ms
+Evento 100 registrado el: 19/09/2026 11:15:09 a. m.
+AVISO: el evento 100 es anterior al último arranque (inicio rápido); los valores son de un arranque previo.
+BootTime: [PENDIENTE]
+MainPathBootTime: 254067 ms
+BootPostBootTime: 4832 ms
+
+=== 2. Registro del sistema ===
+TimeCreated                      Id LevelDisplayName Message
+-----------                      -- ---------------- -------
+19/09/2026 11:15:09 a. m.       100 Crítico          Windows se inició: ...
+19/09/2026 11:15:09 a. m.       101 Advertencia      Esta aplicación tardó más de lo normal en iniciarse, por lo que se degradó el...
+
+=== 3. Módulos y controladores ===
+[PENDIENTE: driverquery y conteo de controladores; se llena al ejecutar .\scrip3.ps1 en la laptop]
+
+=== 4. Apagado programado e inicio rápido ===
+[PENDIENTE: shutdown /r /t 300, shutdown /a y powercfg /a; se llena al ejecutar .\scrip3.ps1 en la laptop]
+shutdown /s /full no se ejecuta aquí porque apagaría el equipo.
+HiberbootEnabled: 0
+
+=== 5. Deber 3: secciones 1 a 3 ===
+Sistema: Microsoft Windows 11 Home Single Language
+Versión: 10.0.26200
+Arrancó: lunes, 19 de octubre de 2026 8:58:10
+[PENDIENTE: Encendida; se llena al ejecutar .\scrip3.ps1 en la laptop]
+FwPOSTTime: 5570 ms
+
+=== 6. Archivos y Git ===
+[PENDIENTE: git y semana03; se llena al ejecutar .\scrip3.ps1 en la laptop]
+
+=== Fin del diagnóstico Windows ===

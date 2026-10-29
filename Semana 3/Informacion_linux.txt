@@ -1,0 +1,42 @@
+=== Inicio del diagnóstico Linux (semana 3) ===
+
+=== 1. Tiempo de arranque ===
+Startup finished in 3.095s (kernel) + 9.865s (initrd) + 21.478s (userspace) = 34.440s
+graphical.target reached after 21.409s in userspace.
+12.769s plymouth-quit-wait.service
+11.313s sys-module-fuse.device
+11.191s sys-devices-platform-serial8250-serial8250:0-serial8250:0.1-tty-ttyS1.device
+11.191s dev-ttyS1.device
+11.127s sys-devices-platform-serial8250-serial8250:0-serial8250:0.3-tty-ttyS3.device
+[PENDIENTE: critical-chain; se llena al ejecutar ./scrip3.sh en la VM]
+Último arranque: 2026-10-19 11:22:42
+
+=== 2. Registro del sistema ===
+oct 19 11:22:42 localhost kernel: APIC calibration not consistent with PM-Timer: 117ms instead of 100ms
+oct 19 11:22:42 localhost kernel: acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended configuration space under this bridge
+oct 19 11:22:42 localhost kernel: device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+oct 19 11:22:43 localhost kernel: Warning: Unmaintained driver is detected: cnic
+oct 19 11:22:43 localhost kernel: Warning: Unmaintained driver is detected: cnic_init
+oct 19 11:22:43 localhost kernel: Warning: Unmaintained driver is detected: bnx2i
+oct 19 11:22:43 localhost kernel: Warning: Unmaintained driver is detected: bnx2i_mod_init
+oct 19 11:22:45 localhost kernel: vboxguest: loading out-of-tree module taints kernel.
+[PENDIENTE: dmesg | head -n 5; se llena al ejecutar ./scrip3.sh en la VM]
+
+=== 3. Módulos y controladores ===
+[PENDIENTE: lsmod, modinfo dummy, modprobe/rmmod e ip -brief link; se llena al ejecutar ./scrip3.sh en la VM]
+
+=== 4. Apagado programado ===
+[PENDIENTE: shutdown -r +5 y shutdown -c; se llena al ejecutar ./scrip3.sh en la VM]
+systemctl reboot no se ejecuta aquí porque reiniciaría el equipo.
+
+=== 5. Deber 3: secciones 1 a 3 ===
+[PENDIENTE: Sistema y Núcleo; se llena al ejecutar ./scrip3.sh en la VM]
+Arrancó: 2026-10-19 11:22:42
+[PENDIENTE: Encendida (uptime -p); se llena al ejecutar ./scrip3.sh en la VM]
+Startup finished in 3.095s (kernel) + 9.865s (initrd) + 21.478s (userspace) = 34.440s
+graphical.target reached after 21.409s in userspace.
+
+=== 6. Archivos y Git ===
+[PENDIENTE: git y semana03; se llena al ejecutar ./scrip3.sh en la VM]
+
+=== Fin del diagnóstico Linux ===
