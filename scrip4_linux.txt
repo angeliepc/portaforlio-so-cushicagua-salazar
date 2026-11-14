@@ -1,0 +1,30 @@
+=== 1. Archivo de prueba ===
+Comprar tomates
+Picar cebolla
+Reducir la salsa
+
+=== 2. Llamadas al sistema con strace ===
+strace no esta instalado (sudo dnf install strace)
+
+=== 3. Tipo de comando ===
+cd is a shell builtin
+ls is /usr/bin/ls
+echo is a shell builtin
+
+=== 4. Top 3 procesos por memoria (RSS en KB) ===
+    PID COMMAND           RSS
+    344 unattended-upgr 32736
+    168 networkd-dispat 29852
+     47 systemd-journal 17568
+
+=== 5. Los 5 archivos mas grandes de /var/log ===
+8388608 /var/log/journal/476287c95d334319bfb42beafc3488cb/user-1000.journal
+8388608 /var/log/journal/476287c95d334319bfb42beafc3488cb/system.journal
+320456 /var/log/dpkg.log
+267097 /var/log/syslog
+158236 /var/log/kern.log
+
+=== 6. Gestor de paquetes (dnf / rpm) ===
+dnf no esta disponible en este sistema
+
+Listo.

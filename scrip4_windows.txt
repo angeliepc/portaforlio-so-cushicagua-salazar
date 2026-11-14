@@ -1,0 +1,73 @@
+=== 1. Archivo de prueba ===
+Comprar tomates
+Picar cebolla
+Reducir la salsa
+
+=== 2. Tipo de comando (equivale a 'type' en Linux) ===
+
+Name          CommandType Source
+----          ----------- ------
+cd                  Alias
+Get-ChildItem      Cmdlet Microsoft.PowerShell.Management
+PING.EXE      Application C:\WINDOWS\system32\PING.EXE
+
+
+
+=== 3. Top 3 procesos por memoria (Working Set en bytes) ===
+
+Name                  Id         WS
+----                  --         --
+Memory Compression  4400 2440683520
+vmmemWSL            8272 1009201152
+Code               27984  613752832
+
+
+
+=== 4. Los 5 archivos mas grandes de C:\Windows\Logs ===
+
+   Length FullName
+   ------ --------
+483407749 C:\Windows\Logs\CBS\CbsPersist_20261111172203.log
+410723173 C:\Windows\Logs\CBS\CbsPersist_20261102024239.log
+169535150 C:\Windows\Logs\CBS\CbsPersist_20261111170507.log
+132234650 C:\Windows\Logs\Downlevel\MoSetup\UpdateAgent.Old.log
+ 29959103 C:\Windows\Logs\CBS\CbsPersist_20261111164638.log
+
+
+
+=== 5. Gestor de paquetes (winget) ===
+--- Fuentes ---
+Nombre      Argumento                                     Especificado explícitamente
+-------------------------------------------------------------------------------------
+msstore     https://storeedgefd.dsx.mp.microsoft.com/v9.0 false
+winget      https://cdn.winget.microsoft.com/cache        false
+winget-font https://cdn.winget.microsoft.com/fonts        true
+
+--- Buscar e inspeccionar jq ---
+El origen 'msstore' requiere que vea los siguientes contratos antes de usarlo.
+Terms of Transaction: https://aka.ms/microsoft-store-terms-of-transaction
+El origen requiere que la región geográfica de dos letras de la máquina actual se envíe al servicio back-end para que funcione correctamente (por ejemplo, "EE. UU.").
+
+¿Está de acuerdo con todos los términos de los contratos de origen?
+[Y] Sí  [N] No: N
+No se han aceptado uno o varios de los contratos de origen. Operación cancelada. Acepte los contratos de origen o quite los orígenes correspondientes.
+El origen 'msstore' requiere que vea los siguientes contratos antes de usarlo.
+Terms of Transaction: https://aka.ms/microsoft-store-terms-of-transaction
+El origen requiere que la región geográfica de dos letras de la máquina actual se envíe al servicio back-end para que funcione correctamente (por ejemplo, "EE. UU.").
+
+¿Está de acuerdo con todos los términos de los contratos de origen?
+[Y] Sí  [N] No: N
+No se han aceptado uno o varios de los contratos de origen. Operación cancelada. Acepte los contratos de origen o quite los orígenes correspondientes.
+
+(Omitida la instalacion; usa -Instalar para ejecutarla)
+
+--- Paquetes instalados (primeros 10) ---
+El origen 'msstore' requiere que vea los siguientes contratos antes de usarlo.
+Terms of Transaction: https://aka.ms/microsoft-store-terms-of-transaction
+El origen requiere que la regi├│n geogr├ífica de dos letras de la m├íquina actual se env├¡e al servicio back-end para que funcione correctamente (por ejemplo, "EE. UU.").
+
+┬┐Est├í de acuerdo con todos los t├®rminos de los contratos de origen?
+N
+[Y] S├¡  [N] No: No se han aceptado uno o varios de los contratos de origen. Operaci├│n cancelada. Acepte los contratos de origen o quite los or├¡genes correspondientes.
+
+Listo.
