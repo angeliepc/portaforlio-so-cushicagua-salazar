@@ -1,0 +1,99 @@
+﻿Semana 5 Â· Taller 1 Â· Guardias en la puerta (Windows)
+Fecha: 2026-11-20 20:06:37  Â·  Equipo: FABBYGUARNIZO  Â·  Usuario: FaBBy  Â·  Administrador: False
+
+==================== 1. Puertas abiertas ====================
+
+PS> Get-NetTCPConnection -State Listen | Sort-Object LocalPort | Select-Object LocalAddress, LocalPort, OwningProcess -First 12
+
+LocalAddress   LocalPort OwningProcess
+------------   --------- -------------
+::                   135          1580
+0.0.0.0              135          1580
+192.168.56.1         139             4
+172.20.240.1         139             4
+192.168.100.11       139             4
+::                   445             4
+0.0.0.0             5040          5096
+::                  7070          5452
+0.0.0.0             7070          5452
+::1                 7679         29364
+127.0.0.1           7768         31508
+::1                42050         10964
+
+PS> (Get-NetTCPConnection -State Listen).Count
+26
+
+PS> $c = Get-NetTCPConnection -State Listen -LocalPort 135
+       Get-Process -Id $c[0].OwningProcess | Select-Object Id, ProcessName
+
+  Id ProcessName
+  -- -----------
+1580 svchost
+
+==================== 2. El portero en Linux (firewalld) ====================
+(Esta secciÃ³n se ejecuta en Linux: ver semana05_linux.sh)
+
+==================== 3. DROP frente a REJECT (nftables) ====================
+(Esta secciÃ³n se ejecuta en Linux: ver semana05_linux.sh)
+
+==================== 4. El portero en Windows ====================
+
+PS> Get-NetFirewallProfile | Select-Object Name, Enabled, DefaultInboundAction, DefaultOutboundAction
+
+Name    Enabled DefaultInboundAction DefaultOutboundAction
+----    ------- -------------------- ---------------------
+Domain     True        NotConfigured         NotConfigured
+Private    True        NotConfigured         NotConfigured
+Public     True        NotConfigured         NotConfigured
+
+PS> Get-Service mpssvc, BFE | Select-Object Name, DisplayName, Status
+
+Name   DisplayName                   Status
+----   -----------                   ------
+BFE    Motor de filtrado de base    Running
+mpssvc Firewall de Windows Defender Running
+
+PS> (Get-NetFirewallRule -Enabled True -Direction Inbound).Count
+207
+
+PS> Get-NetFirewallRule -Enabled True -Direction Inbound | Select-Object -First 5 DisplayName, Action
+
+DisplayName                                                                    Action
+-----------                                                                    ------
+Uso de administrador de trabajos en cola de Wi-Fi Direct (entrada)              Allow
+Redes principales: IPv6 (IPv6 de entrada)                                       Allow
+Optimización de distribución (UDP de entrada)                                   Allow
+Redes principales: anuncio de enrutador (ICMPv6 de entrada)                     Allow
+Redes principales: destino inaccesible fragment. necesaria (ICMPv4 de entrada)  Allow
+
+# W6. Crear y quitar una regla (requiere administrador)
+
+PS> New-NetFirewallRule -DisplayName 'Taller5' -Direction Inbound -Protocol TCP -LocalPort 8080 -Action Block
+New-NetFirewallRule : Acceso denegado. 
+En C:\Users\FaBBy\Desktop\TERCER SEMESTRE\SO.angeliepc\portaforlio-so-cushicagua-salazar\Semana 5\script5.ps1: 69 Carácter: 8
++ Paso { New-NetFirewallRule -DisplayName 'Taller5' -Direction Inbound  ...
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (M    SFT_NetFirewallRule:root/standardcimv2/MSFT_Ne    tFirewallRule) [New-NetFirewallRule], CimExcep    tion
+    + FullyQualifiedErrorId : Windows System Error     5,New-NetFirewallRule
+(Sin administrador: Â«Acceso denegadoÂ» es lo esperado en el laboratorio.)
+
+# W7. La lista del motor WFP (requiere administrador)
+
+PS> netsh wfp show filters
+No se pueden enumerar los eventos de red; error = 5 (ERROR_ACCESS_DENIED)
+La operaci├│n solicitada requiere elevaci├│n (Ejecutar como administrador).
+(No se generÃ³ filters.xml: sin administrador es lo esperado en el laboratorio.)
+
+==================== 5. La bitÃ¡cora de autenticaciÃ³n ====================
+# W8. Eventos 4625 del registro de Seguridad (requiere administrador)
+
+PS> Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625} -MaxEvents 5 | Select-Object TimeCreated, Id, Message | Format-List
+Error: No se encontraron eventos que coincidan con los criterios de selección especificados.
+
+# W9. La misma cuenta con la muestra
+(No se encontrÃ³ '.\muestras_eventos_4625.csv': usa -Muestra con la ruta completa o haz cd a la carpeta de la semana 5.)
+
+==================== 6. Reto final: su propio IDS ====================
+(Sin muestra cargada: no se puede ejecutar el reto.)
+
+==================== Fin del script ====================
