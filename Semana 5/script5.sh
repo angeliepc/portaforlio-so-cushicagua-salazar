@@ -1,3 +1,4 @@
+
 #!/usr/bin/env bash
 # =====================================================================
 # Semana 5 · Taller 1 · Guardias en la puerta (Linux / AlmaLinux)

@@ -1,5 +1,5 @@
 ﻿Semana 5 Â· Taller 1 Â· Guardias en la puerta (Windows)
-Fecha: 2026-11-20 20:06:37  Â·  Equipo: FABBYGUARNIZO  Â·  Usuario: FaBBy  Â·  Administrador: False
+Fecha: 2026-11-20 21:00:33  Â·  Equipo: FABBYGUARNIZO  Â·  Usuario: FaBBy  Â·  Administrador: False
 
 ==================== 1. Puertas abiertas ====================
 
@@ -7,21 +7,21 @@ PS> Get-NetTCPConnection -State Listen | Sort-Object LocalPort | Select-Object L
 
 LocalAddress   LocalPort OwningProcess
 ------------   --------- -------------
+::1                   22         26364
+127.0.0.1             22         26364
 ::                   135          1580
 0.0.0.0              135          1580
-192.168.56.1         139             4
 172.20.240.1         139             4
+192.168.56.1         139             4
 192.168.100.11       139             4
 ::                   445             4
 0.0.0.0             5040          5096
-::                  7070          5452
 0.0.0.0             7070          5452
+::                  7070          5452
 ::1                 7679         29364
-127.0.0.1           7768         31508
-::1                42050         10964
 
 PS> (Get-NetTCPConnection -State Listen).Count
-26
+28
 
 PS> $c = Get-NetTCPConnection -State Listen -LocalPort 135
        Get-Process -Id $c[0].OwningProcess | Select-Object Id, ProcessName
@@ -73,8 +73,8 @@ New-NetFirewallRule : Acceso denegado.
 En C:\Users\FaBBy\Desktop\TERCER SEMESTRE\SO.angeliepc\portaforlio-so-cushicagua-salazar\Semana 5\script5.ps1: 69 Carácter: 8
 + Paso { New-NetFirewallRule -DisplayName 'Taller5' -Direction Inbound  ...
 +        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : PermissionDenied: (M    SFT_NetFirewallRule:root/standardcimv2/MSFT_Ne    tFirewallRule) [New-NetFirewallRule], CimExcep    tion
-    + FullyQualifiedErrorId : Windows System Error     5,New-NetFirewallRule
+    + CategoryInfo          : Perm    issionDenied: (MSFT_NetFirewal    lRule:root/standardcimv2/MSFT_    NetFirewallRule) [New-NetFirew    allRule], CimException
+    + FullyQualifiedErrorId : Wind    ows System Error 5,New-NetFire    wallRule
 (Sin administrador: Â«Acceso denegadoÂ» es lo esperado en el laboratorio.)
 
 # W7. La lista del motor WFP (requiere administrador)
